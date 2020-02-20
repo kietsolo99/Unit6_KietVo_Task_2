@@ -17,6 +17,6 @@ clock_t beginTime = clock();
 double cpuTime() 
 {
 	clock_t endTime = clock();
-	return double(endTime - beginTime) / CLOCKS_PER_SEC;
+	return double(endTime - beginTime) / CLOCKS_PER_SEC;// return type funtion
 	
 }

@@ -1,5 +1,46 @@
 #include <iostream>
+#include "accounts.h"
+using namespace std;
 
-int main() {
-  std::cout << "Hello World!\n";
+void printArray(int[], int);
+void sortArrAsc(int[], int);
+int main() 
+{
+  //Bubble sort Asc method per task 2 of Unit 6 Assignment
+  cout << "\nStart: " << cpuTime() << endl;
+  sortArrAsc(accountBalances, maxAccounts);
+  //calll the sort funtion
+  printArray(accountBalances, maxAccounts);
+  cout << "\nEnd: " << cpuTime() << endl;
+  return 0;
+}
+
+//Funtion definition to Print Array
+void printArray(int arrayVals[], int size)
+{
+  cout <<"\nPrinted Values in Array: " << endl;
+  for(int i = 0; i < size; i++)
+  {
+    cout << arrayVals[i] << ",";
+  }
+
+}
+
+//Bubble Sort Array Asc
+void sortArrAsc(int arrayVals[], int size)
+{
+int temp = 0;
+for (int left = 0; left < size; left++)
+{
+  for(int right = left + 1; right < size; right++)
+  {
+    if(arrayVals[right] < arrayVals[left])
+    {
+      temp = arrayVals[left];
+      arrayVals[left] = arrayVals[right];
+      arrayVals[right] = temp;
+    }
+  }
+}
+  
 }
